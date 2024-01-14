@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ## 模型微调
 
 模型微调采用 P-Tuning v2 微调方法，想要进行微调，可以执行 `pt-450.sh` 脚本。
-注意，原模型需要克隆到 chatglm3-6b 文件夹下，或者修改脚本中的模型路径变量（后同）。
+注意，原模型需要克隆到 `chatglm3-6b` 文件夹下，或者修改脚本中的模型路径变量（后同）。
 ```
 git lfs install
 git clone https://www.modelscope.cn/ZhipuAI/chatglm3-6b.git
