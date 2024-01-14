@@ -33,9 +33,12 @@ else:
 model = model.to(args.device)
 
 while True:
-    prompt = input("Prompt:")
+    prompt = "<|system|>你是一个表格处理 AI，请根据用户提供的表格信息和问题，输出一段能够解决问题的 python 代码，注意回答中不要出现任何关于代码的说明和描述。下面是用户提供的表格信息以及问题：<|user|>"
+    # prompt = "<|system|><|user|>"
+    prompt += input("Prompt:")
     inputs = tokenizer(prompt, return_tensors="pt")
     inputs = inputs.to(args.device)
-    response = model.generate(input_ids=inputs["input_ids"], max_length=inputs["input_ids"].shape[-1] + args.max_new_tokens)
+    response = model.generate(input_ids=inputs["input_ids"], max_new_tokens = args.max_new_tokens, history = None,
+                             temperature = 0.01, top_p = 1, do_sample = True)
     response = response[0, inputs["input_ids"].shape[-1]:]
     print("Response:", tokenizer.decode(response, skip_special_tokens=True))
