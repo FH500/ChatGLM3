@@ -15,8 +15,8 @@ SAVE_INTERVAL=500
 DATESTR=`date +%Y%m%d-%H%M%S`
 RUN_NAME=EXCEL_pt
 
-BASE_MODEL_PATH=/home/featurize/work/yzh/ChatGLM3/chatglm3-6b
-DATASET_PATH=/home/featurize/work/yzh/ChatGLM3/pt_train/formatted_data/450_data.jsonl
+BASE_MODEL_PATH=chatglm3-6b
+DATASET_PATH=myiris/450_data.jsonl
 OUTPUT_DIR=output/${RUN_NAME}-${MAX_STEP}-${LR}-${PRE_SEQ_LEN}
 
 mkdir -p $OUTPUT_DIR

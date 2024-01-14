@@ -1,4 +1,4 @@
-DEV_PATH=excel_data/dev_60.json
+DEV_PATH=myiris/dev_60.json
 CHECKPOINTPATH=output/EXCEL_pt-2000-5e-3-128
 
 python finetune_chatmodel_demo/evaluate.py \
